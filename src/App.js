@@ -17,7 +17,7 @@ class App extends React.Component {
       currentUser: null,
     };
   }
-  
+
   unsubscribeFromAuth = null;
 
   componentDidMount() {
@@ -26,14 +26,18 @@ class App extends React.Component {
         const userRef = await createUserProfileDocument(userAuth);
         userRef.onSnapshot(async (snapShot) => {
           await this.setState({
-            currentUser: { id: snapShot.id, ...snapShot.data() },
+            currentUser: {
+              id: snapShot.id,
+              ...snapShot.data(),
+            },
           });
           console.log(this.state);
         });
       } else {
-        this.setState({currentUser: userAuth});
+        this.setState({
+          currentUser: userAuth,
+        });
       }
-
     });
   }
 
@@ -46,10 +50,10 @@ class App extends React.Component {
       <div>
         <Header currentUser={this.state.currentUser} />
         <Switch>
-          <Route exact path="/" component={HomePage} />{" "}
-          <Route path="/shop" component={ShopPage} />{" "}
-          <Route path="/signin" component={SigninAndSignupPage} />{" "}
-        </Switch>{" "}
+          <Route exact path="/" component={HomePage} />
+          <Route path="/shop" component={ShopPage} />
+          <Route path="/signin" component={SigninAndSignupPage} />
+        </Switch>
       </div>
     );
   }
