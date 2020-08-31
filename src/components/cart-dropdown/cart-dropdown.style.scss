@@ -11,6 +11,11 @@
     right: 40px;
     z-index: 5;
 
+    .empty-message {
+        font-size: 18px;
+        margin: 50px auto;
+    }
+
     .cart-items {
         height: 240px;
         display: flex;
@@ -21,8 +26,6 @@
         overflow-y: auto;
         color: #000;
         font-size: .7rem;
-        font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, "黑体", Arial, Tahoma;
-        height: 100%;
 
         &::-webkit-scrollbar {
             width: 4px;
