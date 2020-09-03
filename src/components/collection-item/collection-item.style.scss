@@ -14,7 +14,8 @@
         margin-bottom: 5px;
     }
 
-    .custom-button {
+    button {
+    // .custom-button {
         width: 80%;
         opacity: 0.7;
         position: absolute;
@@ -27,7 +28,8 @@
             opacity: 0.8;
         }
 
-        .custom-button {
+        button {
+        // .custom-button {
             opacity: 0.85;
             display: flex;
         }
